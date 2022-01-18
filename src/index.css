@@ -1,13 +1,19 @@
 :root {
   --mainColor: #f4614a;
+  --secondColor: #C34D3B;
   --bgColor: #24292d;
   --bgSecondColor: #2f363e;
+}
+
+*{
+  box-sizing: border-box;
 }
 
 html {
   height: 100%;
   color: white;
   margin: 0;
+  text-align: center;
 }
 
 body {
@@ -22,4 +28,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+button {
+  cursor: pointer;
 }

@@ -17,7 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('/public/bg2.png') no-repeat left;
+  background: url('/public/bg.png') no-repeat left;
 }
 
 .login {
