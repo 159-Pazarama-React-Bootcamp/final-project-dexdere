@@ -1,11 +1,37 @@
 import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import CreateTicket from './pages/CreateTicket';
+import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
+import Successful from './pages/Successful';
+import TicketQuery from './pages/TicketQuery';
 
-function App() {
+// eslint-disable-next-line react/prop-types
+// function PrivateRoute({ children }) {
+//   return localStorage.getItem('auth') ? <Navigate to="/main-page" /> : children;
+// }
+
+export default function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          {/* <Route
+            path="/login"
+            element={
+              <PrivateRoute>
+                <Login />
+              </PrivateRoute>
+            }
+          /> */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/successful" element={<Successful />} />
+          <Route path="/ticket-query" element={<TicketQuery />} />
+          <Route path="/" element={<CreateTicket />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
-
-export default App;
