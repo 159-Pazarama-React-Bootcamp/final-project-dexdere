@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 import css from './CreateTicketForm.module.css';
 
 export default function LoginForm() {
-  const formik = useFormik({
+  const { handleSubmit, handleChange, values } = useFormik({
     initialValues: {
       name: '',
       surname: '',
@@ -14,12 +14,12 @@ export default function LoginForm() {
       details: '',
       photograph: '',
     },
-    onSubmit: (values) => {
-      console.log(JSON.stringify(values, null, 2));
+    onSubmit: (val) => {
+      console.log(JSON.stringify(val, null, 2));
     },
   });
   return (
-    <form className={css.container} onSubmit={formik.handleSubmit}>
+    <form className={css.container} onSubmit={handleSubmit}>
       <h1>Create Ticket</h1>
 
       <main className={css.mainDiv}>
@@ -28,39 +28,39 @@ export default function LoginForm() {
           <input
             name="name"
             type="text"
-            onChange={formik.handleChange}
-            value={formik.values.name}
+            onChange={handleChange}
+            value={values.name}
           />
 
           <label htmlFor="surname">Surname</label>
           <input
             name="surname"
             type="text"
-            onChange={formik.handleChange}
-            value={formik.values.surname}
+            onChange={handleChange}
+            value={values.surname}
           />
 
           <label htmlFor="age">Age</label>
           <input
             name="age"
             type="number"
-            onChange={formik.handleChange}
-            value={formik.values.age}
+            onChange={handleChange}
+            value={values.age}
           />
 
           <label htmlFor="tcNo">Tc No</label>
           <input
             name="tcNo"
             type="number"
-            onChange={formik.handleChange}
-            value={formik.values.tcNo}
+            onChange={handleChange}
+            value={values.tcNo}
           />
 
           <input
             name="photograph"
             type="file"
-            onChange={formik.handleChange}
-            value={formik.values.photograph}
+            onChange={handleChange}
+            value={values.photograph}
           />
         </div>
 
@@ -70,8 +70,8 @@ export default function LoginForm() {
             className={css.address}
             name="address"
             type="form_id"
-            onChange={formik.handleChange}
-            value={formik.values.address}
+            onChange={handleChange}
+            value={values.address}
           />
 
           <label htmlFor="details">Ticket Details</label>
@@ -79,8 +79,8 @@ export default function LoginForm() {
             className={css.details}
             name="details"
             type="form_id"
-            onChange={formik.handleChange}
-            value={formik.values.details}
+            onChange={handleChange}
+            value={values.details}
           />
         </div>
       </main>

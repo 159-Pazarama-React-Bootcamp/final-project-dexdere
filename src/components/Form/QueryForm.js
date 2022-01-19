@@ -4,23 +4,23 @@ import { useFormik } from 'formik';
 import css from './QueryForm.module.css';
 
 export default function QueryForm() {
-  const formik = useFormik({
+  const { handleSubmit, handleChange, values } = useFormik({
     initialValues: {
       ticketCode: '',
     },
-    onSubmit: (values) => {
-      console.log(JSON.stringify(values, null, 2));
+    onSubmit: (val) => {
+      console.log(JSON.stringify(val, null, 2));
     },
   });
   return (
-    <form className={css.container} onSubmit={formik.handleSubmit}>
+    <form className={css.container} onSubmit={handleSubmit}>
       <h1>Ticket Status Query</h1>
 
       <input
         name="ticketCode"
         type="text"
-        onChange={formik.handleChange}
-        value={formik.values.email}
+        onChange={handleChange}
+        value={values.email}
       />
 
       <button type="submit">Check Status</button>
