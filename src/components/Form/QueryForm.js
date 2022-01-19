@@ -1,13 +1,12 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { useFormik } from 'formik';
-import css from './LoginForm.module.css';
+import css from './QueryForm.module.css';
 
-export default function LoginForm() {
+export default function QueryForm() {
   const formik = useFormik({
     initialValues: {
-      username: '',
-      password: '',
+      ticketCode: '',
     },
     onSubmit: (values) => {
       console.log(JSON.stringify(values, null, 2));
@@ -15,24 +14,16 @@ export default function LoginForm() {
   });
   return (
     <form className={css.container} onSubmit={formik.handleSubmit}>
-      <h1>Sign In Dashboard</h1>
+      <h1>Ticket Status Query</h1>
 
-      <label htmlFor="username">Username</label>
       <input
-        name="username"
+        name="ticketCode"
         type="text"
         onChange={formik.handleChange}
         value={formik.values.email}
       />
 
-      <label htmlFor="password">Password</label>
-      <input
-        name="password"
-        type="password"
-        onChange={formik.handleChange}
-        value={formik.values.password}
-      />
-      <button type="submit">Sing In</button>
+      <button type="submit">Check Status</button>
     </form>
   );
 }
