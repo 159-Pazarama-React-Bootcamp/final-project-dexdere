@@ -1,4 +1,4 @@
-.loginBody {
+.container {
   background: linear-gradient(
     60deg,
     var(--bgSecondColor) 50%,
@@ -10,7 +10,7 @@
   display: flex;
 }
 
-.loginBody > div {
+.container > div {
   box-shadow: 0 0 30px rgba(1, 1, 1, 0.7);
   width: 70vw;
   height: 80vh;
@@ -33,6 +33,6 @@
   box-shadow: 0 0 40px rgba(1, 1, 1, 0.5);
 }
 
-.loginBody > img {
+.container > img {
   position: absolute;
 }

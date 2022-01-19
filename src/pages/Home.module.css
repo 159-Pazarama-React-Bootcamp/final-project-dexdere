@@ -1,4 +1,4 @@
-.homeBody {
+.container {
   background: linear-gradient(
     180deg,
     var(--bgSecondColor) 60%,
@@ -10,13 +10,13 @@
   display: flex;
 }
 
-.homeBody > div {
+.container > div {
   width: 70vw;
   height: 80vh;
   box-shadow: 0 0 50px rgba(1, 1, 1, 0.7);
 }
 
-.homeBody button {
+.container button {
   font-size: 40px;
   background: none;
   /* border: none; */

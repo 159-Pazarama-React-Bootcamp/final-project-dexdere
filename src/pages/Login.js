@@ -4,7 +4,7 @@ import LoginForm from '../components/Form/LoginForm';
 
 export default function Login() {
   return (
-    <div className={css.loginBody}>
+    <div className={css.container}>
       <div>
         <div className={css.login}>
           <LoginForm />

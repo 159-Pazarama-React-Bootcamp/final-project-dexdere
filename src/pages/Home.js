@@ -4,7 +4,7 @@ import css from './Home.module.css';
 
 export default function Home() {
   return (
-    <div className={css.homeBody}>
+    <div className={css.container}>
       <div>
         <Link to="/create-ticket">
           <button className={css.createBtn} type="button">

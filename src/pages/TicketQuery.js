@@ -4,7 +4,7 @@ import QueryForm from '../components/Form/QueryForm';
 
 export default function TicketQuery() {
   return (
-    <div className={css.queryBody}>
+    <div className={css.container}>
       <div>
         <QueryForm />
       </div>
