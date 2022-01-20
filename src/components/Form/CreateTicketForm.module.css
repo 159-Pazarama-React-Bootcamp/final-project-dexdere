@@ -34,6 +34,14 @@
   color: gray;
 }
 
+.container label > span {
+  color: var(--mainColor);
+}
+.container label > span::before {
+  content: '-';
+  color: gray;
+}
+
 .container > button {
   height: 40px;
   border: none;
@@ -90,6 +98,7 @@ input[type='file'] {
   border: 1px solid white;
   margin: auto;
   cursor: pointer;
+  border: 1px solid var(--mainColor);
 }
 
 input[type='file']::file-selector-button {

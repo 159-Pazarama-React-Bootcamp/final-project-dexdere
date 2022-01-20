@@ -1,17 +1,20 @@
 import * as Yup from 'yup';
 
 const CreateFormValid = Yup.object({
-  name: Yup.string().required('Zorunlu alan'),
-  surname: Yup.string().required('Zorunlu alan'),
-  age: Yup.number().positive().integer().max(2).required('Zorunlu alan'),
-  tcNo: Yup.number()
+  name: Yup.string().min(3).required('required'),
+  surname: Yup.string().min(3).required('required'),
+  age: Yup.number()
+    .typeError('must be only digits')
     .positive()
     .integer()
-    .min(11)
-    .max(11)
-    .required('Zorunlu alan'),
-  address: Yup.string().required('Zorunlu alan'),
-  details: Yup.string().required('Zorunlu alan'),
+    .max(99)
+    .required('required'),
+  tcNo: Yup.string()
+    .matches(/^[0-9]+$/, 'must be only digits')
+    .length(11, 'must be exactly 11 characters')
+    .required('required'),
+  address: Yup.string().required('required'),
+  details: Yup.string().required('required'),
   file: Yup.mixed(),
 });
 

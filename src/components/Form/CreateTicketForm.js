@@ -5,11 +5,11 @@ import css from './CreateTicketForm.module.css';
 import { CreateFormValid } from './validations/CreateFormValid';
 
 export default function LoginForm() {
-  const { handleSubmit, handleChange, values } = useFormik({
+  const { handleSubmit, handleChange, values, errors } = useFormik({
     initialValues: {
       name: '',
       surname: '',
-      age: '',
+      age: null,
       tcNo: '',
       address: '',
       details: '',
@@ -27,7 +27,9 @@ export default function LoginForm() {
 
       <main className={css.mainDiv}>
         <div className={css.divHalf}>
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">
+            Name {errors.name ? <span> {errors.name} </span> : null}
+          </label>
           <input
             name="name"
             type="text"
@@ -35,7 +37,9 @@ export default function LoginForm() {
             value={values.name}
           />
 
-          <label htmlFor="surname">Surname</label>
+          <label htmlFor="surname">
+            Surname {errors.surname ? <span> {errors.surname} </span> : null}
+          </label>
           <input
             name="surname"
             type="text"
@@ -43,18 +47,22 @@ export default function LoginForm() {
             value={values.surname}
           />
 
-          <label htmlFor="age">Age</label>
+          <label htmlFor="age">
+            Age {errors.age ? <span> {errors.age} </span> : null}
+          </label>
           <input
             name="age"
-            type="number"
+            type="text"
             onChange={handleChange}
             value={values.age}
           />
 
-          <label htmlFor="tcNo">Tc No</label>
+          <label htmlFor="tcNo">
+            Tc No {errors.tcNo ? <span> {errors.tcNo} </span> : null}
+          </label>
           <input
             name="tcNo"
-            type="number"
+            type="text"
             onChange={handleChange}
             value={values.tcNo}
           />
@@ -68,7 +76,9 @@ export default function LoginForm() {
         </div>
 
         <div className={css.divHalf2}>
-          <label htmlFor="address">Address</label>
+          <label htmlFor="address">
+            Address {errors.address ? <span> {errors.address} </span> : null}
+          </label>
           <textarea
             className={css.address}
             name="address"
@@ -77,7 +87,10 @@ export default function LoginForm() {
             value={values.address}
           />
 
-          <label htmlFor="details">Ticket Details</label>
+          <label htmlFor="details">
+            Ticket Details{' '}
+            {errors.details ? <span> {errors.details} </span> : null}
+          </label>
           <textarea
             className={css.details}
             name="details"
