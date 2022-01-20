@@ -58,7 +58,7 @@ export default function LoginForm() {
           />
 
           <label htmlFor="tcNo">
-            Tc No {errors.tcNo ? <span> {errors.tcNo} </span> : null}
+            TC Kimlik No {errors.tcNo ? <span> {errors.tcNo} </span> : null}
           </label>
           <input
             name="tcNo"
