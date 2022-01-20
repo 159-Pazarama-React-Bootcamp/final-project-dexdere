@@ -2,6 +2,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import css from './CreateTicketForm.module.css';
+import { CreateFormValid } from './validations/CreateFormValid';
 
 export default function LoginForm() {
   const { handleSubmit, handleChange, values } = useFormik({
@@ -12,11 +13,13 @@ export default function LoginForm() {
       tcNo: '',
       address: '',
       details: '',
-      photograph: '',
+      file: '',
+      ticketNumber: new Date().valueOf(),
     },
     onSubmit: (val) => {
       console.log(JSON.stringify(val, null, 2));
     },
+    validationSchema: CreateFormValid,
   });
   return (
     <form className={css.container} onSubmit={handleSubmit}>
@@ -57,10 +60,10 @@ export default function LoginForm() {
           />
 
           <input
-            name="photograph"
+            name="file"
             type="file"
             onChange={handleChange}
-            value={values.photograph}
+            value={values.file}
           />
         </div>
 
