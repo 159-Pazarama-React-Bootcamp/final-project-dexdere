@@ -1,26 +1,26 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { useFormik } from 'formik';
 import css from './CreateTicketForm.module.css';
 import { CreateFormValid } from './validations/CreateFormValid';
 
-export default function LoginForm() {
-  const { handleSubmit, handleChange, values, errors } = useFormik({
-    initialValues: {
-      name: '',
-      surname: '',
-      age: null,
-      tcNo: '',
-      address: '',
-      details: '',
-      file: '',
-      ticketNumber: new Date().valueOf(),
-    },
-    onSubmit: (val) => {
-      console.log(JSON.stringify(val, null, 2));
-    },
-    validationSchema: CreateFormValid,
-  });
+export default function CreateTicketForm() {
+  const { handleSubmit, handleChange, setFieldValue, values, errors } =
+    useFormik({
+      initialValues: {
+        name: '',
+        surname: '',
+        age: '',
+        tcNo: '',
+        address: '',
+        details: '',
+        file1: '',
+        ticketNumber: new Date().valueOf(),
+      },
+      onSubmit: (val) => {
+        console.log(val);
+      },
+      validationSchema: CreateFormValid,
+    });
   return (
     <form className={css.container} onSubmit={handleSubmit}>
       <h1>Create Ticket</h1>
@@ -68,10 +68,9 @@ export default function LoginForm() {
           />
 
           <input
-            name="file"
+            name="file1"
             type="file"
-            onChange={handleChange}
-            value={values.file}
+            onChange={(event) => setFieldValue('file1', event.target.files[0])}
           />
         </div>
 

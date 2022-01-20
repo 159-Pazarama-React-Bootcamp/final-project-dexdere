@@ -15,7 +15,7 @@ const CreateFormValid = Yup.object({
     .required('required'),
   address: Yup.string().required('required'),
   details: Yup.string().required('required'),
-  file: Yup.mixed(),
+  file1: Yup.mixed(),
 });
 
 export { CreateFormValid };
