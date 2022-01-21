@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
-import css from './CreateTicketForm.module.css';
-import { CreateFormValid } from './validations/CreateFormValid';
+import css from './style.module.css';
+import { CreateFormValid } from '../validations/CreateFormValid';
 
 export default function CreateTicketForm() {
   const { handleSubmit, handleChange, setFieldValue, values, errors } =

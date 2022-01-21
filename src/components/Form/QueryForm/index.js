@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFormik } from 'formik';
-import css from './QueryForm.module.css';
+import css from './style.module.css';
 
 export default function QueryForm() {
   const { handleSubmit, handleChange, values } = useFormik({

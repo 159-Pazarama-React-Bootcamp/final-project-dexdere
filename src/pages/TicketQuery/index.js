@@ -1,6 +1,6 @@
 import React from 'react';
-import css from './TicketQuery.module.css';
-import QueryForm from '../components/Form/QueryForm';
+import css from './style.module.css';
+import QueryForm from '../../components/Form/QueryForm';
 
 export default function TicketQuery() {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import css from './CreateTicket.module.css';
-import CreateTicketForm from '../components/Form/CreateTicketForm';
+import css from './style.module.css';
+import CreateTicketForm from '../../components/Form/CreateTicketForm';
 
 export default function CreateTicket() {
   return (

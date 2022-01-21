@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { useFormik } from 'formik';
-import css from './LoginForm.module.css';
+import css from './style.module.css';
 
 export default function LoginForm() {
   const { handleSubmit, handleChange, values } = useFormik({
