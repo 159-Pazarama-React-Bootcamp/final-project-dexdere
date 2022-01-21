@@ -1,9 +1,12 @@
 import React from 'react';
 import { useFormik } from 'formik';
-import css from './style.module.css';
+import { useNavigate } from 'react-router-dom';
 import { CreateFormValid } from '../validations/CreateFormValid';
+import css from './style.module.css';
 
 export default function CreateTicketForm() {
+  const navigate = useNavigate();
+
   const { handleSubmit, handleChange, setFieldValue, values, errors } =
     useFormik({
       initialValues: {
@@ -18,6 +21,7 @@ export default function CreateTicketForm() {
       },
       onSubmit: (val) => {
         console.log(val);
+        navigate('/successful');
       },
       validationSchema: CreateFormValid,
     });

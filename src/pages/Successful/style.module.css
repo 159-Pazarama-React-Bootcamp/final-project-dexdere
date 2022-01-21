@@ -1,0 +1,35 @@
+.container {
+  background-color: var(--bgColor);
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-family: 'poppins', sans-serif;
+}
+
+.container > section {
+  width: 70vw;
+  height: 80vh;
+  box-shadow: 0 0 50px rgba(1, 1, 1, 0.7);
+  background-color: var(--bgSecondColor);
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftDiv {
+  justify-content: center;
+  width: 100%;
+  padding-top: 2em;
+}
+
+.leftDiv > h1:first-child {
+  color: limegreen;
+}
+
+.leftDiv > h1 {
+  font-size: 32px;
+}
+
+.rightDiv {
+  padding: 1em;
+}
