@@ -12,7 +12,7 @@ export default function Successful() {
         </div>
 
         <div className={css.rightDiv}>
-          <img src="/c.png" alt="" height="100%" />
+          <img src="/successful.png" alt="" height="100%" />
         </div>
       </section>
     </main>
