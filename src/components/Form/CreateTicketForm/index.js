@@ -1,30 +1,32 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { changeTicketState } from '../../../redux/ticket/createTicketSlice';
 import { CreateFormValid } from '../validations/CreateFormValid';
 import css from './style.module.css';
 
 export default function CreateTicketForm() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const { handleSubmit, handleChange, setFieldValue, values, errors } =
-    useFormik({
-      initialValues: {
-        name: '',
-        surname: '',
-        age: '',
-        tcNo: '',
-        address: '',
-        details: '',
-        file1: '',
-        ticketNumber: new Date().valueOf(),
-      },
-      onSubmit: (val) => {
-        console.log(val);
-        navigate('/successful');
-      },
-      validationSchema: CreateFormValid,
-    });
+  const { handleSubmit, handleChange, values, errors } = useFormik({
+    initialValues: {
+      name: '',
+      surname: '',
+      age: '',
+      tcNo: '',
+      address: '',
+      details: '',
+      file1: '',
+      ticketNumber: new Date().valueOf(),
+    },
+    onSubmit: (val) => {
+      dispatch(changeTicketState(val));
+      navigate('/successful');
+    },
+    validationSchema: CreateFormValid,
+  });
   return (
     <form className={css.container} onSubmit={handleSubmit}>
       <h1>Create Ticket</h1>
@@ -74,7 +76,8 @@ export default function CreateTicketForm() {
           <input
             name="file1"
             type="file"
-            onChange={(event) => setFieldValue('file1', event.target.files[0])}
+            onChange={handleChange}
+            // onChange={(event) => setFieldValue('file1', event.target.files[0])}
           />
         </div>
 
