@@ -2,7 +2,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { changeTicketState } from '../../../redux/ticket/createTicketSlice';
+import { postTicket } from '../../../redux/mockAPI';
 import { CreateFormValid } from '../validations/CreateFormValid';
 import css from './style.module.css';
 
@@ -10,23 +10,24 @@ export default function CreateTicketForm() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { handleSubmit, handleChange, values, errors } = useFormik({
-    initialValues: {
-      name: '',
-      surname: '',
-      age: '',
-      tcNo: '',
-      address: '',
-      details: '',
-      file1: '',
-      ticketNumber: new Date().valueOf(),
-    },
-    onSubmit: (val) => {
-      dispatch(changeTicketState(val));
-      navigate('/successful');
-    },
-    validationSchema: CreateFormValid,
-  });
+  const { handleSubmit, handleChange, setFieldValue, values, errors } =
+    useFormik({
+      initialValues: {
+        name: '',
+        surname: '',
+        age: '',
+        tcNo: '',
+        address: '',
+        details: '',
+        file1: '',
+        ticketNumber: '',
+      },
+      onSubmit: (val) => {
+        dispatch(postTicket(val));
+        navigate('/successful');
+      },
+      validationSchema: CreateFormValid,
+    });
   return (
     <form className={css.container} onSubmit={handleSubmit}>
       <h1>Create Ticket</h1>
@@ -34,7 +35,7 @@ export default function CreateTicketForm() {
       <main className={css.mainDiv}>
         <div className={css.divHalf}>
           <label htmlFor="name">
-            Name {errors.name ? <span> {errors.name} </span> : null}
+            Name {errors.name && <span> {errors.name} </span>}
           </label>
           <input
             name="name"
@@ -44,7 +45,7 @@ export default function CreateTicketForm() {
           />
 
           <label htmlFor="surname">
-            Surname {errors.surname ? <span> {errors.surname} </span> : null}
+            Surname {errors.surname && <span> {errors.surname} </span>}
           </label>
           <input
             name="surname"
@@ -54,7 +55,7 @@ export default function CreateTicketForm() {
           />
 
           <label htmlFor="age">
-            Age {errors.age ? <span> {errors.age} </span> : null}
+            Age {errors.age && <span> {errors.age} </span>}
           </label>
           <input
             name="age"
@@ -64,7 +65,7 @@ export default function CreateTicketForm() {
           />
 
           <label htmlFor="tcNo">
-            TC Kimlik No {errors.tcNo ? <span> {errors.tcNo} </span> : null}
+            TC Kimlik No {errors.tcNo && <span> {errors.tcNo} </span>}
           </label>
           <input
             name="tcNo"
@@ -76,14 +77,13 @@ export default function CreateTicketForm() {
           <input
             name="file1"
             type="file"
-            onChange={handleChange}
-            // onChange={(event) => setFieldValue('file1', event.target.files[0])}
+            onChange={(event) => setFieldValue('file1', event.target.files[0])}
           />
         </div>
 
         <div className={css.divHalf2}>
           <label htmlFor="address">
-            Address {errors.address ? <span> {errors.address} </span> : null}
+            Address {errors.address && <span> {errors.address} </span>}
           </label>
           <textarea
             className={css.address}
@@ -94,8 +94,7 @@ export default function CreateTicketForm() {
           />
 
           <label htmlFor="details">
-            Ticket Details{' '}
-            {errors.details ? <span> {errors.details} </span> : null}
+            Ticket Details {errors.details && <span> {errors.details} </span>}
           </label>
           <textarea
             className={css.details}
