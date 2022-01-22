@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
+import { CreateTicketReducer } from './reducers/CreateTicketReducer';
 
-const reducers = {};
+const reducers = { CreateTicketReducer };
 
 export const RootReducer = combineReducers(reducers);
