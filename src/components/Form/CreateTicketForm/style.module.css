@@ -42,6 +42,17 @@
   color: gray;
 }
 
+.fileError {
+  padding-top: 5px;
+  color: var(--mainColor);
+  font-weight: bolder;
+}
+
+.fileError::after {
+  content: ' - jpeg / jpg / png ';
+  color: #c8c8c8;
+}
+
 .container > button {
   height: 60px;
   border: none;

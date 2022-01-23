@@ -1,5 +1,7 @@
 import * as Yup from 'yup';
 
+const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/png'];
+
 const CreateFormValid = Yup.object({
   name: Yup.string().min(3).required('required'),
   surname: Yup.string().min(3).required('required'),
@@ -7,6 +9,7 @@ const CreateFormValid = Yup.object({
     .typeError('must be only digits')
     .positive()
     .integer()
+    .min(18)
     .max(99)
     .required('required'),
   tcNo: Yup.string()
@@ -15,7 +18,11 @@ const CreateFormValid = Yup.object({
     .required('required'),
   address: Yup.string().required('required'),
   details: Yup.string().required('required'),
-  file1: Yup.mixed(),
+  file: Yup.mixed().test(
+    'fileFormat',
+    'Unsupported Format',
+    (value) => value && SUPPORTED_FORMATS.includes(value.type)
+  ),
 });
 
 export { CreateFormValid };

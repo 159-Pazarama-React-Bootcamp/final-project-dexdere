@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
@@ -19,10 +20,11 @@ export default function CreateTicketForm() {
         tcNo: '',
         address: '',
         details: '',
-        file1: '',
-        ticketNumber: '',
+        file: '',
+        ticketNumber: new Date().valueOf(),
       },
       onSubmit: (val) => {
+        localStorage.setItem('ticketNumber', val.ticketNumber);
         dispatch(postTicket(val));
         navigate('/successful');
       },
@@ -75,10 +77,13 @@ export default function CreateTicketForm() {
           />
 
           <input
-            name="file1"
+            name="file"
             type="file"
-            onChange={(event) => setFieldValue('file1', event.target.files[0])}
+            onChange={(event) => setFieldValue('file', event.target.files[0])}
           />
+          {errors.file && (
+            <span className={css.fileError}> {errors.file} </span>
+          )}
         </div>
 
         <div className={css.divHalf2}>
