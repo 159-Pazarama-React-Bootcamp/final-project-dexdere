@@ -1,6 +1,5 @@
 import * as Yup from 'yup';
 
-const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/png'];
 
 const CreateFormValid = Yup.object({
   name: Yup.string().min(3).required('required'),
@@ -18,11 +17,7 @@ const CreateFormValid = Yup.object({
     .required('required'),
   address: Yup.string().required('required'),
   details: Yup.string().required('required'),
-  file: Yup.mixed().test(
-    'fileFormat',
-    'Unsupported Format',
-    (value) => value && SUPPORTED_FORMATS.includes(value.type)
-  ),
+  file: Yup.mixed(),
 });
 
 export { CreateFormValid };

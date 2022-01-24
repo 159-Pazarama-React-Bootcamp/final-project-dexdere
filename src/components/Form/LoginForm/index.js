@@ -1,16 +1,21 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import css from './style.module.css';
 
 export default function LoginForm() {
+  const navigate = useNavigate();
+
   const { handleSubmit, handleChange, values } = useFormik({
     initialValues: {
       username: '',
       password: '',
     },
     onSubmit: (val) => {
-      console.log(JSON.stringify(val, null, 2));
+      if (val.username === 'kodluyoruz' && val.password === 'bootcamp159') {
+        navigate('/dashboard');
+      }
     },
   });
   return (
@@ -21,6 +26,7 @@ export default function LoginForm() {
       <input
         name="username"
         type="text"
+        placeholder="kodluyoruz"
         onChange={handleChange}
         value={values.email}
       />
@@ -29,6 +35,7 @@ export default function LoginForm() {
       <input
         name="password"
         type="password"
+        placeholder="bootcamp159"
         onChange={handleChange}
         value={values.password}
       />

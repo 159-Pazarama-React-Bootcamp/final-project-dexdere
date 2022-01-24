@@ -14,7 +14,7 @@ export const createTicketSlice = createSlice({
   },
 });
 
-export const postSlice = createSlice({
+export const getSlice = createSlice({
   name: 'getTicket',
   initialState: {
     ticket: [],
@@ -29,5 +29,5 @@ export const postSlice = createSlice({
 
 export const reducer = combineReducers({
   createTicket: createTicketSlice.reducer,
-  postTicket: postSlice.reducer,
+  getTicket: getSlice.reducer,
 });
