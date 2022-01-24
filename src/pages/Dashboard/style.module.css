@@ -1,0 +1,66 @@
+.container {
+  background: linear-gradient(
+    60deg,
+    var(--mainColor) 50%,
+    var(--bgSecondColor) 50%
+  );
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.container > div {
+  box-shadow: 0 0 30px rgba(1, 1, 1, 0.7);
+  width: 70vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/public/dashboard-bg.svg') no-repeat right;
+}
+
+.container table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin: 0 5em;
+  width: 100%;
+  max-height: 100px;
+  overflow: auto;
+}
+
+.container table img {
+  cursor: pointer;
+  width: 30px;
+}
+
+.container thead > tr {
+  color: var(--bgSecondColor);
+  background-color: #e5a024;
+}
+
+.container th,
+.container tr {
+  padding: 12px 15px;
+}
+
+.container td {
+  padding: 10px 15px;
+  font-weight: bold;
+}
+
+.container tbody tr {
+  border-bottom: 1px solid #dddddd;
+  background-color: #f3bc63;
+  background-color: #3b301b;
+}
+
+.container tbody tr:nth-of-type(even) {
+  background-color: #e5a024;
+  background-color: #574730;
+}
+
+.container tbody tr:last-of-type {
+  border-bottom: 5px solid #e5a024;
+}

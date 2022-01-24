@@ -1,10 +1,9 @@
+/* eslint-disable */
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const getTicket = createAsyncThunk('ticket/getTicket', async () => {
-  axios
-    .get(process.env.REACT_APP_API_URL)
-    .then((response) => console.log(response.data));
+  axios.get(process.env.REACT_APP_API_URL).then((response) => response.data);
 });
 
 export const postTicket = createAsyncThunk(

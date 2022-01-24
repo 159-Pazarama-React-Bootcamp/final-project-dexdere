@@ -26,8 +26,8 @@ export default function LoginForm() {
       <input
         name="username"
         type="text"
-        placeholder="kodluyoruz"
         onChange={handleChange}
+        placeholder="kodluyoruz"
         value={values.email}
       />
 
@@ -35,8 +35,8 @@ export default function LoginForm() {
       <input
         name="password"
         type="password"
-        placeholder="bootcamp159"
         onChange={handleChange}
+        placeholder="bootcamp159"
         value={values.password}
       />
 
