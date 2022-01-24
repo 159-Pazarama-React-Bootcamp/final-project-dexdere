@@ -32,56 +32,7 @@ export default function Dashboard() {
             })} */}
           </tbody>
         </table>
-        {/* 
-        {deneme.map(() => {
-          return (
-            `<table>
-                <thead>
-                  <tr>
-                    <th>Company</th>
-                    <th>Contact</th>
-                    <th>Country</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                    <td>Germany</td>
-                  </tr>
-                  <tr>
-                    <td>Centro comercial Moctezuma</td>
-                    <td>Francisco Chang</td>
-                    <td>Mexico</td>
-                  </tr>
-                </tbody>
-             </table>`);
-        })} */}
       </div>
     </div>
   );
-}
-
-{
-  /* <table>
-          <thead>
-            <tr>
-              <th>Company</th>
-              <th>Contact</th>
-              <th>Country</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Alfreds Futterkiste</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
-            </tr>
-            <tr>
-              <td>Centro comercial Moctezuma</td>
-              <td>Francisco Chang</td>
-              <td>Mexico</td>
-            </tr>
-          </tbody>
-        </table> */
 }

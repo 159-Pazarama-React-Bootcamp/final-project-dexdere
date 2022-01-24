@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -10,25 +10,37 @@ export default function CreateTicketForm() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { handleSubmit, handleChange, setFieldValue, values, errors } =
-    useFormik({
-      initialValues: {
-        name: '',
-        surname: '',
-        age: '',
-        tcNo: '',
-        address: '',
-        details: '',
-        file: '',
-        ticketNumber: String(new Date().valueOf()),
-      },
-      onSubmit: (val) => {
-        localStorage.setItem('ticketNumber', val.ticketNumber);
-        dispatch(postTicket(val));
-        navigate('/successful');
-      },
-      validationSchema: CreateFormValid,
-    });
+  const [base64, setBase64] = useState('');
+
+  function imageToBase64(file) {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setBase64(reader.result);
+    };
+  }
+
+  const { handleSubmit, handleChange, values, errors } = useFormik({
+    initialValues: {
+      name: '',
+      surname: '',
+      age: '',
+      tcNo: '',
+      address: '',
+      details: '',
+      file: '',
+      ticketNumber: String(new Date().valueOf()),
+    },
+    onSubmit: (val) => {
+      val.file = base64;
+      localStorage.setItem('ticketNumber', val.ticketNumber);
+      dispatch(postTicket(val));
+      navigate('/successful');
+      // console.log(val.file);
+      // console.log(typeof val.file);
+    },
+    validationSchema: CreateFormValid,
+  });
   return (
     <form className={css.container} onSubmit={handleSubmit}>
       <h1>Create Ticket</h1>
@@ -78,7 +90,7 @@ export default function CreateTicketForm() {
           <input
             name="file"
             type="file"
-            onChange={(event) => setFieldValue('file', event.target.files[0])}
+            onChange={(event) => imageToBase64(event.target.files[0])}
           />
         </div>
 
