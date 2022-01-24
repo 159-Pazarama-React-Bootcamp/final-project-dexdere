@@ -29,7 +29,8 @@ export default function CreateTicketForm() {
       address: '',
       details: '',
       file: '',
-      ticketNumber: String(new Date().valueOf()),
+      date: new Date().toLocaleDateString(),
+      ticketNumber: Date.now().toString(),
     },
     onSubmit: (val) => {
       val.file = base64;

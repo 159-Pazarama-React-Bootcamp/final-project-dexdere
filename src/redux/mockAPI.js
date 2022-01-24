@@ -19,7 +19,8 @@ export const postTicket = createAsyncThunk(
         tcNo: data.tcNo,
         address: data.address,
         details: data.details,
-        file1: data.file,
+        file: data.file,
+        date: data.date,
         ticketNumber: data.ticketNumber,
       })
       .then((response) => response.data);
