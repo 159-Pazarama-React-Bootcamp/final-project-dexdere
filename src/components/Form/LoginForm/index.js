@@ -1,13 +1,13 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
+import { LoginFormValid } from '../validations/LoginFormValid';
 import css from './style.module.css';
 
 export default function LoginForm() {
   const navigate = useNavigate();
 
-  const { handleSubmit, handleChange, values } = useFormik({
+  const { handleSubmit, handleChange, values, errors } = useFormik({
     initialValues: {
       username: '',
       password: '',
@@ -17,12 +17,15 @@ export default function LoginForm() {
         navigate('/dashboard');
       }
     },
+    validationSchema: LoginFormValid,
   });
   return (
     <form className={css.container} onSubmit={handleSubmit}>
       <h1>Sign In Dashboard</h1>
 
-      <label htmlFor="username">Username</label>
+      <label htmlFor="username">
+        Username {errors.username && <span> {errors.username} </span>}
+      </label>
       <input
         name="username"
         type="text"
@@ -31,7 +34,9 @@ export default function LoginForm() {
         value={values.email}
       />
 
-      <label htmlFor="password">Password</label>
+      <label htmlFor="password">
+        Password {errors.password && <span> {errors.password} </span>}
+      </label>
       <input
         name="password"
         type="password"
