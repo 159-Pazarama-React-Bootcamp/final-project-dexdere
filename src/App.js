@@ -1,5 +1,6 @@
+/* eslint-disable */
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import CreateTicket from './pages/CreateTicket';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
@@ -7,24 +8,23 @@ import Successful from './pages/Successful';
 import TicketQuery from './pages/TicketQuery';
 import Home from './pages/Home';
 
-// eslint-disable-next-line react/prop-types
-// function PrivateRoute({ children }) {
-//   return localStorage.getItem('auth') ? <Navigate to="/main-page" /> : children;
-// }
+function PrivateRoute({ children }) {
+  return localStorage.getItem('auth') ? children : <Navigate to="/" />;
+}
 
 export default function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Routes>
-          {/* <Route
-            path="/login"
+          <Route
+            path="/dashboard"
             element={
               <PrivateRoute>
-                <Login />
+                <Dashboard />
               </PrivateRoute>
             }
-          /> */}
+          />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/successful" element={<Successful />} />

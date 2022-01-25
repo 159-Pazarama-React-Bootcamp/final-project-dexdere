@@ -18,7 +18,7 @@ export default function Home() {
           </button>
         </Link>
 
-        <Link to="/login">
+        <Link to={localStorage.getItem('auth') ? '/dashboard' : '/login'}>
           <button className={css.dasboardBtn} type="button">
             Admin Dashboard
           </button>

@@ -14,6 +14,7 @@ export default function LoginForm() {
     },
     onSubmit: (val) => {
       if (val.username === 'kodluyoruz' && val.password === 'bootcamp159') {
+        localStorage.setItem('auth', true);
         navigate('/dashboard');
       }
     },
