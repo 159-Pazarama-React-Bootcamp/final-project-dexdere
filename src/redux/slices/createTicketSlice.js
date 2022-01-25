@@ -1,5 +1,5 @@
 import { createSlice, combineReducers } from '@reduxjs/toolkit';
-import { getTicket, postTicket } from '../mockAPI';
+import { postTicket } from '../mockAPI';
 
 export const createTicketSlice = createSlice({
   name: 'createTicket',
@@ -10,24 +10,9 @@ export const createTicketSlice = createSlice({
     [postTicket.fulfilled]: (state, action) => {
       state.ticket = action.payload;
     },
-    [postTicket.rejected]: () => 'Opps there seems to be an error',
-  },
-});
-
-export const getSlice = createSlice({
-  name: 'getTicket',
-  initialState: {
-    ticket: [],
-  },
-  extraReducers: {
-    [getTicket.fulfilled]: (state, action) => {
-      state.ticket = action.payload;
-    },
-    [getTicket.rejected]: () => 'Opps there seems to be an error',
   },
 });
 
 export const reducer = combineReducers({
   createTicket: createTicketSlice.reducer,
-  getTicket: getSlice.reducer,
 });
