@@ -37,8 +37,6 @@ export default function CreateTicketForm() {
       localStorage.setItem('ticketNumber', val.ticketNumber);
       dispatch(postTicket(val));
       navigate('/successful');
-      // console.log(val.file);
-      // console.log(typeof val.file);
     },
     validationSchema: CreateFormValid,
   });

@@ -9,9 +9,21 @@ export default function Menu() {
         <button type="button">Home</button>
       </Link>
 
+      <Link to="/dashboard">
+        <button type="button">Dashboard</button>
+      </Link>
+
+      <Link to="/create-ticket">
+        <button type="button">CreateTicket</button>
+      </Link>
+
+      <Link to="/ticket-query">
+        <button type="button">Ticket Query</button>
+      </Link>
+
       <Link to="/login">
         <button onClick={() => localStorage.clear()} type="button">
-          Sign Out
+          Sing In / Out
         </button>
       </Link>
     </div>

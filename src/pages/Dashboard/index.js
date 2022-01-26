@@ -1,8 +1,6 @@
-/* eslint-disable */
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import css from './style.module.css';
-import Menu from '../../components/Menu';
 
 export default function Dashboard() {
   const [tickets, setTickets] = useState([]);
@@ -41,7 +39,9 @@ export default function Dashboard() {
               tickets.map((data) => {
                 return (
                   <tr>
-                    <td className="tableName">{data.name}</td>
+                    <td className="tableName">
+                      {data.name} {data.surname}
+                    </td>
                     <td>{data.details}</td>
                     <td>{data.ticketNumber}</td>
                     <td>{data.date}</td>
@@ -56,7 +56,6 @@ export default function Dashboard() {
           </tbody>
         </table>
       </div>
-      <Menu />
     </div>
   );
 }

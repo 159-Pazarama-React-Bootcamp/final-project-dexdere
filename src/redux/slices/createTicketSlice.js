@@ -5,6 +5,7 @@ export const createTicketSlice = createSlice({
   name: 'createTicket',
   initialState: {
     ticket: [],
+    ticketNumber: '',
   },
   extraReducers: {
     [postTicket.fulfilled]: (state, action) => {

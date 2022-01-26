@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Successful from './pages/Successful';
 import TicketQuery from './pages/TicketQuery';
 import Home from './pages/Home';
+import Menu from './components/Menu';
 
 function PrivateRoute({ children }) {
   return localStorage.getItem('auth') ? children : <Navigate to="/" />;
@@ -16,6 +17,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        <Menu />
+
         <Routes>
           <Route
             path="/dashboard"

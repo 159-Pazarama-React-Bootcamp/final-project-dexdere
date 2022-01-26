@@ -2,16 +2,22 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0 25%;
   font-family: 'poppins', sans-serif;
 }
 
-.container > h1 {
+.container > main {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: auto;
+}
+
+.container > main > h1 {
   margin: 40px;
   color: white;
 }
 
-.container > input {
+.container > main > input {
   text-align: center;
   margin-bottom: 20px;
   height: 45px;
@@ -22,13 +28,13 @@
   border: none;
 }
 
-.container > label {
+.container > main > label {
   text-align: start;
   font-weight: bolder;
   color: gray;
 }
 
-.container > button {
+.container > main > button {
   height: 45px;
   border: none;
   border-radius: 15px;
@@ -38,4 +44,51 @@
   margin-top: 10px;
   outline: 0;
   font-weight: bolder;
+}
+
+.result {
+  flex-direction: row;
+  display: flex;
+}
+
+.container table {
+  border-collapse: collapse;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  margin: auto;
+  margin-top: 3em;
+}
+
+.container thead > tr {
+  color: var(--bgSecondColor);
+  background-color: #e5a024;
+  font-size: 1.1em;
+}
+
+.container th,
+.container tr {
+  padding: 12px 15px;
+  max-width: 33%;
+}
+
+.container td {
+  padding: 30px;
+  font-weight: bold;
+}
+
+.container tbody tr {
+  border-bottom: 1px solid #dddddd;
+  background: rgba(36, 41, 45, 0.92);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.container tbody tr:hover {
+  background-color: var(--bgSecondColor);
+}
+
+.container tbody tr:last-of-type {
+  border-bottom: 5px solid #e5a024;
 }
