@@ -11,4 +11,8 @@
   height: 80vh;
   box-shadow: 0 0 50px rgba(1, 1, 1, 0.7);
   background-color: var(--bgSecondColor);
+  background-image: url('/public/question.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
 }
