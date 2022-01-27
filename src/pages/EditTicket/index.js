@@ -40,13 +40,16 @@ export default function EditTicket() {
             <h1>Name: <span>{` ${ticket.name} ${ticket.surname}`}</span></h1>
             <h1>Age: <span>{ticket.age}</span></h1>
             <h1>Status: <span id={ticket.status}>{ticket.status}</span></h1>
-            <h1>Tc No: <span>{ticket.tcNo}</span></h1>
+            <h1>Identity Number: <span>{ticket.tcNo}</span></h1>
             <h1>Date: <span>{ticket.date}</span></h1>
             <h1>Address: <span> {ticket.address}</span></h1>
             <h1>Details: <span>{ticket.details}</span></h1>
           </div>
 
           <div className={css.divRight}>
+            <a href={ticket.file} target="_blank" rel="noreferrer">
+                <img src={ticket.file} alt="" height="200px"/>
+            </a>
             <textarea
               ref={answer}
               className={css.details}

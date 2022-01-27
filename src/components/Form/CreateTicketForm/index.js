@@ -77,7 +77,7 @@ export default function CreateTicketForm() {
           />
 
           <label htmlFor="tcNo">
-            TC Kimlik No {errors.tcNo && <span> {errors.tcNo} </span>}
+            Identity Number {errors.tcNo && <span> {errors.tcNo} </span>}
           </label>
           <input
             name="tcNo"
@@ -91,6 +91,7 @@ export default function CreateTicketForm() {
             type="file"
             onChange={(event) => imageToBase64(event.target.files[0])}
           />
+          {errors.file && <span> {errors.file} </span>}
         </div>
 
         <div className={css.divRight}>

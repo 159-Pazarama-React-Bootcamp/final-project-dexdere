@@ -36,7 +36,6 @@ main > h1 {
 .divRight {
   display: flex;
   flex-direction: column;
-  /* border: 1px solid green; */
 }
 
 .divLeft {
@@ -66,16 +65,7 @@ main > h1 {
   font-size: large;
   border-radius: 1em;
   border: none;
-}
-
-.dropDown > * {
-  height: 50px;
-  width: 200px;
-  text-align: center;
-  margin: auto;
-  font-size: large;
-  border-radius: 1em;
-  border: none;
+  cursor: pointer;
 }
 
 .details {
@@ -89,7 +79,7 @@ main > h1 {
   font-family: 'poppins', sans-serif;
   padding: 1em;
   margin-top: 2em;
-  height: 250px;
+  height: 150px;
 }
 
 .container textarea:focus {

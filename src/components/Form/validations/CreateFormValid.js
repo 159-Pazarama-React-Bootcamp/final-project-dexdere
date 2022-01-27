@@ -1,6 +1,5 @@
 import * as Yup from 'yup';
 
-
 const CreateFormValid = Yup.object({
   name: Yup.string().min(3).required('required'),
   surname: Yup.string().min(3).required('required'),
