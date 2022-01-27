@@ -45,15 +45,18 @@ button:hover {
   text-transform: capitalize;
 }
 
-.pending {
+.pending,
+#pending {
   color: #f2bb62;
   font-weight: 900;
 }
 
-.approved {
+.approved,
+#approved {
   color: #48a14d;
 }
 
-.cancelled {
+.cancelled,
+#cancelled {
   color: var(--mainColor);
 }

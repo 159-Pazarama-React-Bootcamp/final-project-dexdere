@@ -8,6 +8,7 @@ import Successful from './pages/Successful';
 import TicketQuery from './pages/TicketQuery';
 import Home from './pages/Home';
 import Menu from './components/Menu';
+import EditTicket from './pages/EditTicket';
 
 function PrivateRoute({ children }) {
   return localStorage.getItem('auth') ? children : <Navigate to="/" />;
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/successful" element={<Successful />} />
           <Route path="/ticket-query" element={<TicketQuery />} />
           <Route path="/create-ticket" element={<CreateTicket />} />
+          <Route path="/edit-ticket/:id" element={<EditTicket />} />
           <Route path="/" element={<Home />} />
         </Routes>
       </div>

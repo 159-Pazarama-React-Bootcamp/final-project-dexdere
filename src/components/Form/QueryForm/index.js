@@ -46,7 +46,7 @@ export default function QueryForm() {
         {ticketNumber.map((data) => {
           return (
             data.ticketNumber === inputTicket && (
-              <table>
+              <table key={data.ticketNumber}>
                 <thead>
                   <tr>
                     <th>Name</th>
@@ -60,7 +60,7 @@ export default function QueryForm() {
                       {data.name} {data.surname}
                     </td>
                     <td className={data.status}>{data.status}</td>
-                    <td>{data.details}</td>
+                    <td>{data.answer}</td>
                   </tr>
                 </tbody>
               </table>

@@ -1,0 +1,110 @@
+.container {
+  background-color: var(--bgColor);
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.container > div {
+  width: 70vw;
+  height: 80vh;
+  box-shadow: 0 0 50px rgba(1, 1, 1, 0.7);
+  background-color: var(--bgSecondColor);
+  align-items: center;
+}
+
+main > h1 {
+  padding: 20px 0;
+}
+
+.divLeft > h1,
+.ticketNumber {
+  color: var(--mainColor);
+}
+
+.divLeft > h1 {
+  font-size: 1.5em;
+  font-size: 22px;
+}
+
+.divLeft span {
+  color: white;
+}
+
+.divLeft,
+.divRight {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid green; */
+}
+
+.divLeft {
+  float: left;
+  text-align: start;
+  width: 60%;
+  padding-left: 5em;
+  padding-right: 1em;
+}
+
+.divRight {
+  float: right;
+  width: 40%;
+  padding-right: 5em;
+  padding-left: 2em;
+}
+
+.divRight > h1 {
+  color: var(--mainColor);
+}
+
+.dropDown {
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  font-size: large;
+  border-radius: 1em;
+  border: none;
+}
+
+.dropDown > * {
+  height: 50px;
+  width: 200px;
+  text-align: center;
+  margin: auto;
+  font-size: large;
+  border-radius: 1em;
+  border: none;
+}
+
+.details {
+  text-align: center;
+  margin-bottom: 2em;
+  border-radius: 15px;
+  font-size: 1.2em;
+  font-weight: large;
+  outline: 0;
+  border: none;
+  font-family: 'poppins', sans-serif;
+  padding: 1em;
+  margin-top: 2em;
+  height: 250px;
+}
+
+.container textarea:focus {
+  border: 3px solid var(--mainColor);
+}
+
+.divRight button {
+  height: 50px;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.2em;
+  background-color: var(--mainColor);
+  color: white;
+  margin-top: 25px;
+  outline: 0;
+  font-weight: bolder;
+  width: 100%;
+}

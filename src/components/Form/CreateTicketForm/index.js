@@ -45,7 +45,7 @@ export default function CreateTicketForm() {
       <h1>Create Ticket</h1>
 
       <main className={css.mainDiv}>
-        <div className={css.divHalf}>
+        <div className={css.divLeft}>
           <label htmlFor="name">
             Name {errors.name && <span> {errors.name} </span>}
           </label>
@@ -93,7 +93,7 @@ export default function CreateTicketForm() {
           />
         </div>
 
-        <div className={css.divHalf2}>
+        <div className={css.divRight}>
           <label htmlFor="address">
             Address {errors.address && <span> {errors.address} </span>}
           </label>

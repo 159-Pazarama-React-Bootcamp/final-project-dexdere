@@ -58,18 +58,18 @@
   flex-direction: row;
 }
 
-.divHalf,
-.divHalf2 {
+.divLeft,
+.divRight {
   width: 46%;
   display: flex;
   flex-direction: column;
 }
 
-.divHalf {
+.divLeft {
   float: left;
 }
 
-.divHalf2 {
+.divRight {
   float: right;
 }
 

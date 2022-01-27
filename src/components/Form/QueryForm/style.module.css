@@ -68,7 +68,7 @@
 .container th,
 .container tr {
   padding: 12px 15px;
-  max-width: 33%;
+  width: 33%;
 }
 
 .container td {

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import css from './style.module.css';
 
@@ -32,13 +33,15 @@ export default function Dashboard() {
           </thead>
           <tbody>
             {tickets.length === 0 ? (
-              <td className={css.loading}>
-                <h1>Loading...</h1>
-              </td>
+              <tr>
+                <td className={css.loading}>
+                  <h1>Loading...</h1>
+                </td>
+              </tr>
             ) : (
               tickets.map((data) => {
                 return (
-                  <tr>
+                  <tr key={data.ticketNumber}>
                     <td className="tableName">
                       {data.name} {data.surname}
                     </td>
@@ -47,7 +50,9 @@ export default function Dashboard() {
                     <td>{data.date}</td>
                     <td className={data.status}>{data.status}</td>
                     <td>
-                      <img src="/edit-icon.svg" alt="edit-icon" />
+                      <Link to={`/edit-ticket/${data.id}`}>
+                        <img src="/edit-icon.svg" alt="edit-icon" />
+                      </Link>
                     </td>
                   </tr>
                 );
