@@ -47,9 +47,12 @@ export default function EditTicket() {
           </div>
 
           <div className={css.divRight}>
-            <a href={ticket.file} target="_blank" rel="noreferrer">
-                <img src={ticket.file} alt="" height="200px"/>
-            </a>
+            {ticket.file !== '' && (
+              <a href={ticket.file} target="_blank" rel="noreferrer">
+                <img src={ticket.file} alt="" height="200px" />
+              </a>
+            )}        
+            
             <textarea
               ref={answer}
               className={css.details}

@@ -8,6 +8,7 @@ import TicketQuery from './pages/TicketQuery';
 import Home from './pages/Home';
 import Menu from './components/Menu';
 import EditTicket from './pages/EditTicket';
+import NotFound from './pages/NotFound';
 
 // eslint-disable-next-line react/prop-types
 function PrivateRoute({ children }) {
@@ -35,6 +36,7 @@ export default function App() {
           <Route path="/ticket-query" element={<TicketQuery />} />
           <Route path="/create-ticket" element={<CreateTicket />} />
           <Route path="/edit-ticket/:id" element={<EditTicket />} />
+          <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Home />} />
         </Routes>
       </div>
