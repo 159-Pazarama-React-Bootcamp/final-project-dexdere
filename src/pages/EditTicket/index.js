@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
@@ -38,45 +37,27 @@ export default function EditTicket() {
           </h1>
 
           <div className={css.divLeft}>
-            <h1>
-              Name: <span>{` ${ticket.name} ${ticket.surname}`}</span>
-            </h1>
-            <h1>
-              Age: <span>{ticket.age}</span>
-            </h1>
-            <h1>
-              Status: <span id={ticket.status}>{ticket.status}</span>
-            </h1>
-            <h1>
-              Tc No: <span>{ticket.tcNo}</span>
-            </h1>
-            <h1>
-              Date: <span>{ticket.date}</span>
-            </h1>
-            <h1>
-              Address: <span> {ticket.address}</span>
-            </h1>
-            <h1>
-              Details: <span>{ticket.details}</span>
-            </h1>
+            <h1>Name: <span>{` ${ticket.name} ${ticket.surname}`}</span></h1>
+            <h1>Age: <span>{ticket.age}</span></h1>
+            <h1>Status: <span id={ticket.status}>{ticket.status}</span></h1>
+            <h1>Tc No: <span>{ticket.tcNo}</span></h1>
+            <h1>Date: <span>{ticket.date}</span></h1>
+            <h1>Address: <span> {ticket.address}</span></h1>
+            <h1>Details: <span>{ticket.details}</span></h1>
           </div>
+
           <div className={css.divRight}>
             <textarea
               ref={answer}
               className={css.details}
               name="answer"
               type="form_id"
-            ></textarea>
+            />
+
             <select className={css.dropDown} ref={status}>
-              <option className="pending" value={'pending'}>
-                Pending
-              </option>
-              <option className="approved" value={'approved'}>
-                Approved
-              </option>
-              <option className="cancelled" value={'cancelled'}>
-                Cancelled
-              </option>
+              <option value="pending">Pending</option>
+              <option value="approved">Approved</option>
+              <option value="cancelled">Cancelled</option>
             </select>
 
             <Link to="/dashboard">

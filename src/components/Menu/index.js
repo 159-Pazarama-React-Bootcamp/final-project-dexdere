@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import css from './style.module.css';
 
 export default function Menu() {
+  useLocation();
+
   return (
     <div className={css.container}>
       <Link to="/">
@@ -23,7 +25,7 @@ export default function Menu() {
 
       <Link to="/login">
         <button onClick={() => localStorage.clear()} type="button">
-          Sing In / Out
+          {localStorage.getItem('auth') ? 'Sing Out' : 'Sing In'}
         </button>
       </Link>
     </div>

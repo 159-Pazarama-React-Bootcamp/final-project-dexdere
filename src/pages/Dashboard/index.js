@@ -20,26 +20,22 @@ export default function Dashboard() {
   return (
     <div className={css.container}>
       <div className={css.tableDiv}>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Details</th>
-              <th>Ticket Number</th>
-              <th>Date</th>
-              <th>Status</th>
-              <th>Edit</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tickets.length === 0 ? (
+        {tickets.length === 0 ? (
+          <img src="/loading.svg" alt="" />
+        ) : (
+          <table>
+            <thead>
               <tr>
-                <td className={css.loading}>
-                  <h1>Loading...</h1>
-                </td>
+                <th>Name</th>
+                <th>Details</th>
+                <th>Ticket Number</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Edit</th>
               </tr>
-            ) : (
-              tickets.map((data) => {
+            </thead>
+            <tbody>
+              {tickets.map((data) => {
                 return (
                   <tr key={data.ticketNumber}>
                     <td className="tableName">
@@ -56,10 +52,10 @@ export default function Dashboard() {
                     </td>
                   </tr>
                 );
-              })
-            )}
-          </tbody>
-        </table>
+              })}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   );

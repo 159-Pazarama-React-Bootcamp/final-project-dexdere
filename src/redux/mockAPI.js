@@ -1,10 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-export const getTicket = async () => {
-  axios.get(process.env.REACT_APP_API_URL).then((response) => response.data);
-};
-
 export const postTicket = createAsyncThunk(
   'ticket/postTicket',
   async (data) => {

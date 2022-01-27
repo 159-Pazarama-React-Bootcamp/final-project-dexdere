@@ -77,8 +77,3 @@
 .container tbody tr:last-of-type {
   border-bottom: 15px solid #e5a024;
 }
-
-.loading {
-  height: 100%;
-  font-size: x-large;
-}

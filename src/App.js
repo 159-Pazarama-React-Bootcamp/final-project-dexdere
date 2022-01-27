@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import CreateTicket from './pages/CreateTicket';
@@ -10,8 +9,9 @@ import Home from './pages/Home';
 import Menu from './components/Menu';
 import EditTicket from './pages/EditTicket';
 
+// eslint-disable-next-line react/prop-types
 function PrivateRoute({ children }) {
-  return localStorage.getItem('auth') ? children : <Navigate to="/" />;
+  return localStorage.getItem('auth') ? children : <Navigate to="/login" />;
 }
 
 export default function App() {
