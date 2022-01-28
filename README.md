@@ -2,9 +2,9 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b5d0c26e-c57f-40c3-982a-3b6102f89efa/deploy-status)](https://app.netlify.com/sites/ticketstore/deploys)
 <br>
-[Live Demo](https://ticketstore.netlify.app//)
+[Live Demo](https://ticketstore.netlify.app)
 
-<div style="width:500px;max-width:100%;"><div style="height:0;padding-bottom:56.2%;position:relative;"><iframe width="500" height="281" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameBorder="0" src="https://imgflip.com/embed/630guo"></iframe></div>
+<img src="/public/pages-gif.gif"/>
 
 # Kullandığım Teknolojiler & Araçlar
 - React
