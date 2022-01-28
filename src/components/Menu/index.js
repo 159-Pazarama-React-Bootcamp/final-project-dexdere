@@ -16,7 +16,7 @@ export default function Menu() {
       </Link>
 
       <Link to="/create-ticket">
-        <button type="button">CreateTicket</button>
+        <button type="button">Create Ticket</button>
       </Link>
 
       <Link to="/ticket-query">

@@ -30,13 +30,12 @@ export default function QueryForm() {
     <form className={css.container} onSubmit={handleSubmit}>
       <main>
         <h1>Ticket Status Query</h1>
-
         <input
           className="ticketCode"
           name="ticketCode"
           type="text"
           onChange={handleChange}
-          value={values.email}
+          value={values.ticketCode}
         />
 
         <button type="submit">Check Status</button>
@@ -50,8 +49,8 @@ export default function QueryForm() {
                 <thead>
                   <tr>
                     <th>Name</th>
-                    <th>Status</th>
                     <th>Answer</th>
+                    <th>Status</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -59,8 +58,8 @@ export default function QueryForm() {
                     <td>
                       {data.name} {data.surname}
                     </td>
-                    <td className={data.status}>{data.status}</td>
                     <td>{data.answer}</td>
+                    <td className={data.status}>{data.status}</td>
                   </tr>
                 </tbody>
               </table>

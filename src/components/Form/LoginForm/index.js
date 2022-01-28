@@ -32,7 +32,7 @@ export default function LoginForm() {
         type="text"
         onChange={handleChange}
         placeholder="kodluyoruz"
-        value={values.email}
+        value={values.username}
       />
 
       <label htmlFor="password">

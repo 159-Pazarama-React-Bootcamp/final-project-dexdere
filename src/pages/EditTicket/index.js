@@ -49,7 +49,7 @@ export default function EditTicket() {
           <div className={css.divRight}>
             {ticket.file !== '' && (
               <a href={ticket.file} target="_blank" rel="noreferrer">
-                <img src={ticket.file} alt="" height="200px" />
+                <img className={css.fileIMG} src={ticket.file} alt="" />
               </a>
             )}        
             

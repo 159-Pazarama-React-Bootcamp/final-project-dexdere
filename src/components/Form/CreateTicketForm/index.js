@@ -91,7 +91,7 @@ export default function CreateTicketForm() {
             type="file"
             onChange={(event) => imageToBase64(event.target.files[0])}
           />
-          {errors.file && <span> {errors.file} </span>}
+          <span>File size should not be larger than 500kb</span>
         </div>
 
         <div className={css.divRight}>
