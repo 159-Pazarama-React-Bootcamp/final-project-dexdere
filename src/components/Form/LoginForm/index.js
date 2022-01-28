@@ -46,7 +46,7 @@ export default function LoginForm() {
         value={values.password}
       />
 
-      <button type="submit">Sing In</button>
+      <button type="submit">Sign In</button>
     </form>
   );
 }

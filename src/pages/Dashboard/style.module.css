@@ -1,8 +1,8 @@
 .container {
   background: linear-gradient(
     60deg,
-    var(--mainColor) 50%,
-    var(--bgSecondColor) 50%
+    var(--bgSecondColor) 60%,
+    var(--mainColor) 40%
   );
   height: 100vh;
   justify-content: center;

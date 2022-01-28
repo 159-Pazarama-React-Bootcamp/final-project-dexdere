@@ -60,3 +60,12 @@ button:hover {
 #cancelled {
   color: var(--mainColor);
 }
+
+#active {
+  background: #e5a024;
+  color: #2f363e;
+}
+
+#active:hover {
+  filter: none;
+}
