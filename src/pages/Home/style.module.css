@@ -1,0 +1,55 @@
+.container {
+  background: linear-gradient(
+    180deg,
+    var(--bgSecondColor) 60%,
+    var(--mainColor) 40%
+  );
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.container > div {
+  width: 70vw;
+  height: 80vh;
+  box-shadow: 0 0 50px rgba(1, 1, 1, 0.7);
+}
+
+.container button {
+  font-size: 40px;
+  background: none;
+  /* border: none; */
+  color: white;
+}
+
+.createBtn,
+.queryBtn {
+  width: 50%;
+  height: 50vh;
+}
+
+.createBtn {
+  border: none;
+  border-right: 2px solid var(--bgColor);
+}
+.createBtn:hover {
+  background-color: var(--bgColor);
+}
+
+.queryBtn {
+  border: none;
+  border-left: 1px solid var(--bgColor);
+}
+.queryBtn:hover {
+  background-color: var(--bgColor);
+}
+
+.dasboardBtn {
+  width: 100%;
+  height: 30vh;
+  border: none;
+}
+.dasboardBtn:hover {
+  background-color: var(--secondColor);
+}

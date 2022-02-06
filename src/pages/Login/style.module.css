@@ -1,0 +1,38 @@
+.container {
+  background: linear-gradient(
+    60deg,
+    var(--bgSecondColor) 50%,
+    var(--mainColor) 50%
+  );
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.container > div {
+  box-shadow: 0 0 30px rgba(1, 1, 1, 0.7);
+  width: 70vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/public/bg.png') no-repeat left;
+}
+
+.login {
+  width: 500px;
+  height: 400px;
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 25px rgba(1, 1, 1, 0.3);
+  border-radius: 5px;
+}
+
+.login:hover {
+  box-shadow: 0 0 40px rgba(1, 1, 1, 0.5);
+}
+
+.container > img {
+  position: absolute;
+}

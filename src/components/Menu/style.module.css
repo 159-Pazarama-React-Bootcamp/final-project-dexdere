@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  margin-left: 2vw;
+  margin-top: 10vh;
+}
+
+.container button {
+  height: 40px;
+  width: 200px;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.1em;
+  margin-top: 10px;
+  outline: 0;
+  font-weight: bolder;
+  background-color: #ab4234;
+  color: var(--bgSecondColor);
+  color: white;
+}
+

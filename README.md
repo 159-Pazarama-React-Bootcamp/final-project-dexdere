@@ -1,3 +1,24 @@
+# Final Project - Ticket Store
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b5d0c26e-c57f-40c3-982a-3b6102f89efa/deploy-status)](https://app.netlify.com/sites/ticketstore/deploys)
+<br>
+[Live Demo](https://ticketstore.netlify.app)
+
+<img src="/public/pages-gif.gif"/>
+
+# Kullandığım Teknolojiler & Araçlar
+- React
+- React Router
+- Redux Toolkit
+- Formik & Yup
+- Eslint & Babel & Airbnb Config
+- MockAPI
+- Netlify
+- Base64
+- icon8
+
+
+
 ## Bitirme projesi
 ### Başvuru / ticket yönetim sistemi
 

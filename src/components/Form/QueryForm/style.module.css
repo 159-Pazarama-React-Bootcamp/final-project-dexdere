@@ -1,0 +1,95 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: 'poppins', sans-serif;
+}
+
+.container > main {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-left: 16%;
+}
+
+.container > main > h1 {
+  margin: 40px;
+  color: white;
+}
+
+.container > main > input {
+  text-align: center;
+  margin-bottom: 20px;
+  height: 45px;
+  border-radius: 15px;
+  font-size: 1.2em;
+  font-weight: large;
+  outline: 0;
+  border: none;
+}
+
+.container > main > label {
+  text-align: start;
+  font-weight: bolder;
+  color: gray;
+}
+
+.container > main > button {
+  height: 45px;
+  border: none;
+  border-radius: 15px;
+  font-size: 1em;
+  background-color: var(--mainColor);
+  color: white;
+  margin-top: 10px;
+  outline: 0;
+  font-weight: bolder;
+}
+
+.result {
+  flex-direction: row;
+  display: flex;
+}
+
+.container table {
+  border-collapse: collapse;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  margin: auto;
+  margin-top: 3em;
+}
+
+.container thead > tr {
+  color: var(--bgSecondColor);
+  background-color: #e5a024;
+  font-size: 1.3em;
+}
+
+.container th,
+.container tr {
+  padding: 12px 15px;
+  width: 33%;
+}
+
+.container td {
+  padding: 30px;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.container tbody tr {
+  border-bottom: 1px solid #dddddd;
+  background: rgba(36, 41, 45, 0.92);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.container tbody tr:hover {
+  background-color: var(--bgSecondColor);
+}
+
+.container tbody tr:last-of-type {
+  border-bottom: 5px solid #e5a024;
+}
